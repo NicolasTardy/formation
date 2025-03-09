@@ -1,85 +1,125 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maison Relax - Accueil</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-    <style>
-        /* Ajoutez ici le style spécifique au chat si nécessaire */
-        .chat-container {
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            width: 350px;
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            display: flex;
-            flex-direction: column;
-            height: 200px;
-        }
-        .chat-box {
-            border: 1px solid #ddd;
-            padding: 10px;
-            height: 300px;
-            overflow-y: scroll;
-            margin-bottom: 10px;
-            flex-grow: 1;
-        }
-        .chat-box div {
-            margin-bottom: 10px;
-        }
-        .chat-input-area {
-            display: flex;
-        }
-        .chat-input-area input {
-            flex-grow: 1;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-        .chat-input-area button {
-            padding: 10px 20px;
-            border: none;
-            background: #007BFF;
-            color: white;
-            border-radius: 4px;
-            cursor: pointer;
-            margin-left: 10px;
-        }
-        .chat-input-area button:hover {
-            background: #0056b3;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maison Relax - Accueil</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* Style spécifique au chat */
+    .chat-container {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      width: 350px;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      height: 300px;
+      transition: height 0.3s ease, padding 0.3s ease;
+      overflow: hidden;
+    }
+    /* Chat minimisé : seule l'en-tête reste visible */
+    .chat-container.minimized {
+      height: 40px;
+      padding: 10px;
+    }
+    /* Réduction de la taille du texte de l'en-tête */
+    .chat-container h2 {
+      font-size: 12px;
+      margin: 0;
+      cursor: pointer;
+    }
+    .chat-box {
+      border: 1px solid #ddd;
+      padding: 10px;
+      height: 220px;
+      overflow-y: scroll;
+      margin-bottom: 10px;
+      flex-grow: 1;
+    }
+    .chat-input-area {
+      display: flex;
+    }
+    .chat-input-area input {
+      flex-grow: 1;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    .chat-input-area button {
+      padding: 10px 20px;
+      border: none;
+      background: #007BFF;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+    .chat-input-area button:hover {
+      background: #0056b3;
+    }
+    /* Masquer la zone de chat et la zone de saisie lorsque le chat est minimisé */
+    .chat-container.minimized .chat-box,
+    .chat-container.minimized .chat-input-area {
+      display: none;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Bienvenue dans la formation Maison Relax</h1>
-        <nav>
-            <ul>
-                <li><a href="fonctionnement.html"><i class="fas fa-info-circle"></i> Qu’est-ce que Maison Relax ?</a></li>
-                <li><a href="Tarifs.html"><i class="fas fa-tag"></i> Quels sont les tarifs de Maison Relax ?</a></li>
-                <li><a href="Important.html"><i class="fas fa-exclamation-circle"></i> Qu’est-il important de savoir à propos de Maison Relax ?</a></li>
-                <li><a href="Partenariat.html"><i class="fas fa-handshake"></i> Pourquoi ce partenariat entre Darty et Home Serve ?</a></li>
-                <li><a href="Statistiques.html"><i class="fas fa-chart-bar"></i> Des chiffres importants à connaître ?</a></li>
-                <li><a href="Avantageux.html"><i class="fas fa-gift"></i> Pourquoi est-il très avantageux d’être client Maison Relax en cas de panne ?</a></li>
-            </ul>
-        </nav>
-    </div>
+  <div class="container">
+    <h1>Bienvenue dans la formation Maison Relax</h1>
+    <nav>
+      <ul>
+        <li><a href="fonctionnement.html"><i class="fas fa-info-circle"></i> Qu’est-ce que Maison Relax ?</a></li>
+        <li><a href="Tarifs.html"><i class="fas fa-tag"></i> Quels sont les tarifs de Maison Relax ?</a></li>
+        <li><a href="Important.html"><i class="fas fa-exclamation-circle"></i> Qu’est-il important de savoir à propos de Maison Relax ?</a></li>
+        <li><a href="Partenariat.html"><i class="fas fa-handshake"></i> Pourquoi ce partenariat entre Darty et Home Serve ?</a></li>
+        <li><a href="Statistiques.html"><i class="fas fa-chart-bar"></i> Des chiffres importants à connaître ?</a></li>
+        <li><a href="Avantageux.html"><i class="fas fa-gift"></i> Pourquoi est-il très avantageux d’être client Maison Relax en cas de panne ?</a></li>
+      </ul>
+    </nav>
+  </div>
 
-    <!-- Chat Container -->
-    <div class="chat-container">
-        <h2>Posez vos questions par mot clé, par exemple : Quel prix, quelle durée d'engagement...</h2>
-        <div class="chat-box" id="chat-box"></div>
-        <div class="chat-input-area">
-            <input type="text" id="user-input" placeholder="Posez votre question ici...">
-            <button onclick="sendMessage()">Envoyer</button>
-        </div>
+  <!-- Chat Container -->
+  <div class="chat-container minimized" id="chat-container">
+    <h2 id="chat-header">Posez vos questions par mot clé, par exemple : Quel prix, quelle durée d'engagement...</h2>
+    <div class="chat-box" id="chat-box"></div>
+    <div class="chat-input-area">
+      <input type="text" id="user-input" placeholder="Posez votre question ici...">
+      <!-- L'appel à sendMessage() utilisera la fonction définie dans votre script.js -->
+      <button onclick="sendMessage()">Envoyer</button>
     </div>
+  </div>
 
-    <script src="js/script.js"></script>
+  <script>
+    // Gestion du comportement d'agrandissement/minimisation du chat
+    document.addEventListener('DOMContentLoaded', function() {
+      var chatContainer = document.getElementById('chat-container');
+      var chatHeader = document.getElementById('chat-header');
+      var chatInput = document.getElementById('user-input');
+
+      // Au clic sur l'en-tête, le chat se déploie
+      chatHeader.addEventListener('click', function() {
+        chatContainer.classList.remove('minimized');
+        chatInput.focus();
+      });
+
+      // Lorsqu'on quitte le champ de saisie, le chat se minimise après un court délai
+      chatInput.addEventListener('blur', function() {
+        setTimeout(function() {
+          if (!chatContainer.contains(document.activeElement)) {
+            chatContainer.classList.add('minimized');
+          }
+        }, 200);
+      });
+    });
+  </script>
+  <!-- Inclusion de votre script externe qui gère la réponse du chat -->
+  <script src="js/script.js"></script>
 </body>
 </html>
