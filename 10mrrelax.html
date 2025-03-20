@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Maison Relax - Vers Maison Relax… et au-delà !</title>
+  <link 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    rel="stylesheet"
+/>
+<style>
+  /* RESET DE BASE */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* Corps de page : même dégradé que la page d'accueil */
+  body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(120deg, #6a11cb 0%, #2575fc 100%);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Conteneur principal (effet "glass") */
+  .container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    animation: fadeIn 0.8s ease;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  header h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em;
+  }
+
+  /* Bouton de retour */
+  .back-button {
+    background: #ffd700;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-bottom: 20px;
+    transition: background 0.3s ease;
+  }
+  .back-button:hover {
+    background: #ffbf00;
+  }
+
+  /* Mise en page à deux colonnes : vidéo + texte */
+  .content-wrapper {
+    display: flex;
+    flex-wrap: wrap; /* Permet de passer en colonne si l'écran est trop étroit */
+    gap: 20px;
+    align-items: flex-start;
+    margin-top: 20px;
+  }
+
+  /* Colonne vidéo */
+  .video-section {
+    flex: 1 1 40%; /* Occupe ~40% de la largeur */
+    max-width: 500px; /* Largeur max pour la vidéo */
+  }
+  .video-section video {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  }
+
+  /* Colonne texte */
+  .content-section {
+    flex: 1 1 50%;
+    color: #fff;
+  }
+  .content-section h2 {
+    font-size: 1.4em;
+    margin-bottom: 15px;
+  }
+
+  /* Mise en forme du texte principal */
+  .offer-details {
+    font-size: 1em;
+    line-height: 1.6;
+  }
+  .offer-details p {
+    margin-bottom: 15px;
+  }
+  .offer-details strong {
+    color: #ffd700; /* Met en évidence certains mots ou chiffres */
+  }
+</style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>10. Vers Maison Relax… et au-delà !</h1>
+    </header>
+
+    <!-- Bouton de retour à l'index -->
+    <button class="back-button" onclick="window.location.href='index.html'">
+      Retour à l'accueil
+    </button>
+
+    <!-- Wrapper global pour la vidéo et le texte côte à côte -->
+    <div class="content-wrapper">
+      <!-- Section vidéo -->
+      <section class="video-section">
+        <video controls>
+          <source src="media/10.mp4" type="video/mp4">
+          Votre navigateur ne supporte pas la lecture vidéo.
+        </video>
+      </section>
+
+      <!-- Section contenu -->
+      <section class="content-section">
+        <h2>Petits travaux et réparation à la carte : comment ça se passe ?</h2>
+        <div class="offer-details">
+          <p>- <strong>10%</strong> de réduction pour les clients Maison Relax</p>
+          <p>- Un devis remisé sur simple appel</p>
+          <p>- Un Pro de confiance à moins de 30 km en moyenne</p>
+        </div>
+      </section>
+    </div>
+  </div>
+</body>
+</html>
